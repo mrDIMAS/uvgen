@@ -1,0 +1,18 @@
+[package]
+name = "uvgen"
+version = "0.1.0"
+authors = ["Dmitry Stepanov <d1maxa@yandex.ru>"]
+edition = "2021"
+license = "MIT"
+description = "Triplanar texture coordinates generator and packer"
+keywords = ["uv", "uvgen", "texcoord", "lightmap", "triplanar"]
+include = ["/src/**/*", "/Cargo.toml", "/LICENSE", "/README.md"]
+documentation = "https://docs.rs/uvgen"
+repository = "https://github.com/mrDIMAS/uvgen"
+readme = "README.md"
+resolver = "2"
+rust-version = "1.72"
+
+[dependencies]
+rectutils = "0.1.0"
+nalgebra = "0.32.3"
