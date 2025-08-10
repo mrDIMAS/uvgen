@@ -1,6 +1,6 @@
 [package]
 name = "uvgen"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Dmitry Stepanov <d1maxa@yandex.ru>"]
 edition = "2021"
 license = "MIT"
@@ -14,5 +14,5 @@ resolver = "2"
 rust-version = "1.72"
 
 [dependencies]
-rectutils = "0.3.0"
-nalgebra = "0.33"
+rectutils = "0.5.0"
+nalgebra = "0.34"
