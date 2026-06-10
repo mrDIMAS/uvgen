@@ -78,7 +78,7 @@ use nalgebra::{Vector2, Vector3};
 use rectutils::pack::RectPacker;
 use std::cmp::Ordering;
 
-#[derive(Copy, Clone)]
+#[derive(Copy, PartialEq, Clone)]
 enum PlaneClass {
     XY,
     YZ,
@@ -108,7 +108,7 @@ fn classify_plane(normal: Vector3<f32>) -> PlaneClass {
     class
 }
 
-#[derive(Debug)]
+#[derive(PartialEq, Debug)]
 struct UvMesh {
     // Array of indices of triangles.
     triangles: Vec<usize>,
@@ -142,7 +142,7 @@ impl UvMesh {
 }
 
 /// A set of faces with triangles belonging to faces.
-#[derive(Default, Debug)]
+#[derive(Default, PartialEq, Debug)]
 struct UvBox {
     px: Vec<usize>,
     nx: Vec<usize>,
@@ -208,7 +208,7 @@ fn make_seam(
 /// deserialization. But freshly loaded resource is not suitable for generated lightmap - in most
 /// cases it just does not have secondary texture coordinates. So we have to patch data after loading
 /// somehow with required data, this is where `SurfaceDataPatch` comes into play.
-#[derive(Clone, Debug, Default)]
+#[derive(Clone, PartialEq, Debug, Default)]
 pub struct SurfaceDataPatch {
     /// A surface data id. Usually it is just a hash of surface data. Can be ignored completely, if
     /// you don't need to save patches.
